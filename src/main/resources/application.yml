@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: inbox-app
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Iv1.5371188cdd150010
+            client-secret: 9a2d5dac4785dd7e2da384faf54967824a472671
