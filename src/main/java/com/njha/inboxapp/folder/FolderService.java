@@ -17,12 +17,6 @@ public class FolderService {
         folderRepository.save(Folder.builder().userId(userId).label("Sent").color("Green").build());
         folderRepository.save(Folder.builder().userId(userId).label("Important").color("Red").build());
         folderRepository.save(Folder.builder().userId(userId).label("Starred").color("Yellow").build());
-
-        List<Folder> userFolders = findAllByUserId(userId);
-
-        if (userFolders == null || userFolders.size() == 0) {
-
-        }
     }
 
     public List<Folder> findAllByUserId(String userId) {
@@ -32,7 +26,7 @@ public class FolderService {
     public List<Folder> getAllFoldersForUser(String userId) {
         List<Folder> userFolders = folderRepository.findAllByUserId(userId);
 
-        // Show default folder to users if for whatever reasons user folders were not created on signup
+        // Show default folder to users if for whatever reasons user folders were not created on signup, or if we are unable to access it
         if (userFolders == null || userFolders.size() == 0) {
             userFolders = Arrays.asList(
                     Folder.builder().userId(userId).label("Inbox").color("Blue").build(),
