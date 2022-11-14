@@ -1,36 +1,32 @@
-package com.njha.inboxapp.home;
+package com.njha.inboxapp.email;
 
 import com.njha.inboxapp.emaillist.EmailListDto;
 import com.njha.inboxapp.emaillist.EmailListItemService;
 import com.njha.inboxapp.folder.Folder;
 import com.njha.inboxapp.folder.FolderService;
 import com.njha.inboxapp.user.UserService;
-import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
-public class InboxController {
+public class EmailController {
 
     @Autowired
     private FolderService folderService;
 
     @Autowired
-    private EmailListItemService emailListItemService;
+    private EmailService emailService;
 
-    @Autowired
-    private UserService userService;
-
-    @GetMapping("/")
-    public String homePage(Model model, @AuthenticationPrincipal OAuth2User principal,
-                           @RequestParam(required = false) String folder) {
+    @GetMapping("/emails/{id}")
+    public String viewEmail(@PathVariable UUID id, Model model, @AuthenticationPrincipal OAuth2User principal) {
         if (principal == null || principal.getAttribute("login") == null) {
             return "index";
         }
@@ -39,25 +35,18 @@ public class InboxController {
         model.addAttribute("userName", userName);
 
         String userId = principal.getAttribute("login");
-        userService.takeCareOfNewUser(userId);
-
         List<Folder> userFolders = folderService.getAllFoldersForUser(userId);
         model.addAttribute("userFolders", userFolders);
 
-        // get messages for default folder - Inbox
-        if (Strings.isBlank(folder)) {
-            folder = "Inbox";
-        }
-        model.addAttribute("folderName", folder);
-        List<EmailListDto> folderEmails = emailListItemService.findAllMessagesByUserAndFolder(userId, folder);
-        model.addAttribute("folderEmails", folderEmails);
-
-
+        Email email = emailService.findEmailById(id);
+        model.addAttribute("email", email);
+        String toIds = String.join(", ", email.getTo());
+        model.addAttribute("toIds", toIds);
 
 
 
         model.addAttribute("folderToUnreadCounts", 1);
 
-        return "inbox-page";
+        return "email-page";
     }
 }

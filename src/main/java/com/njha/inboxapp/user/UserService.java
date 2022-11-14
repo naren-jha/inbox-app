@@ -1,5 +1,6 @@
 package com.njha.inboxapp.user;
 
+import com.njha.inboxapp.email.EmailService;
 import com.njha.inboxapp.emaillist.EmailListItemService;
 import com.njha.inboxapp.folder.Folder;
 import com.njha.inboxapp.folder.FolderService;
@@ -15,7 +16,7 @@ public class UserService {
     private FolderService folderService;
 
     @Autowired
-    private EmailListItemService emailListItemService;
+    private EmailService emailService;
 
     public void takeCareOfNewUser(String userId) {
         List<Folder> userFolders = folderService.findAllByUserId(userId);
@@ -26,7 +27,7 @@ public class UserService {
 
         if (isNewUser) {
             folderService.createStandardFoldersForNewUser(userId);
-            emailListItemService.sendWelcomeEmails(userId, "Inbox");
+            emailService.sendWelcomeEmails(userId);
         }
     }
 }
