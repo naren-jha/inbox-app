@@ -8,7 +8,7 @@
 After User SignUp:
 <img width="1788" alt="image" src="https://user-images.githubusercontent.com/58611230/202012282-75d79f4d-5199-4678-919e-124458fcb4fc.png">
 
-Empty folder (no sent items):
+Empty folder (no sent items yet):
 <img width="1792" alt="image" src="https://user-images.githubusercontent.com/58611230/202012450-ee8c3532-a59f-4982-9d33-d987fa83a0f9.png">
 
 
