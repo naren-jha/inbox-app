@@ -17,9 +17,6 @@
             crossorigin="anonymous"
     ></script>
     <style>
-      .bold {
-        font-weight: 800;
-      }
       .container {
         display: grid;
 
@@ -60,33 +57,42 @@
       }
     </style>
 </head>
+<body>
 <div class="container">
     <header>
         <h1>Welcome, <span th:text="${userName}">User</span></h1>
     </header>
 
     <nav>
-        <div class="card mb-3">
-            <a href="/compose" class="btn btn-primary pt-3 pb-3">Compose message</a>
-        </div>
-        <div th:insert="components/folder-list :: folder-list (panelName = 'Folders', folders = ${userFolders}, selectedFolder = ${folderName}, folderToUnreadCounts = ${folderToUnreadCounts})"></div>
+        <div th:insert="components/folder-list :: folder-list (panelName = 'Folders', folders = ${userFolders}, selectedFolder = '', folderToUnreadCounts = ${folderToUnreadCounts})"></div>
     </nav>
 
     <main>
         <div class="card">
-            <div class="card-header" th:text="${folderName}"></div>
+            <div class="card-header">Compose</div>
             <div class="card-body">
-                <div class="list-group">
-<!--                    th:href="@{'/email/' + ${email.id.timeId}} + '?folder=' + ${currentFolder}" +   href="#"-->
-                    <a th:href="@{'/emails/' + ${emailDto.email.key.timeUUID}} + '?folder=' + ${folderName}"
-                            class="list-group-item list-group-item-action" th:classappend="${emailDto.email.unread} ? bold : regular" aria-current="true" th:each="emailDto : ${folderEmails}">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" th:classappend="${emailDto.email.unread} ? bold : regular" th:text="${emailDto.email.subject}">Subject</h5>
-                            <small th:text="${emailDto.agoTimeString}">3 days ago</small>
-                        </div>
-                        <p class="mb-1"><span>From: </span><span th:text="${emailDto.email.from}">Sender</span></p>
-                    </a>
-                </div>
+                <form th:attr="action=@{/sendEmail}" method="POST">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+                    <div class="mb-3">
+                        <label for="toUserIds" class="form-label">To</label>
+                        <!-- th:value="${param.to}" -->
+                        <input type="text" class="form-control" id="toUserIds" name="toUserIds" th:value="${toIds}" placeholder="User ID"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="body" class="form-label">Body</label>
+                        <textarea class="form-control" id="body" name="body" rows="20"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <a href="/" type="submit" class="btn btn-secondary">Cancel</a>
+                </form>
             </div>
         </div>
     </main>

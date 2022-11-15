@@ -1,5 +1,6 @@
 package com.njha.inboxapp.folder;
 
+import com.datastax.oss.driver.api.core.uuid.Uuids;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,10 @@ public class FolderService {
     private FolderRepository folderRepository;
 
     public void createStandardFoldersForNewUser(String userId) {
-        folderRepository.save(Folder.builder().userId(userId).label("Inbox").color("Blue").build());
-        folderRepository.save(Folder.builder().userId(userId).label("Sent").color("Green").build());
-        folderRepository.save(Folder.builder().userId(userId).label("Important").color("Red").build());
-        folderRepository.save(Folder.builder().userId(userId).label("Starred").color("Yellow").build());
+        folderRepository.save(Folder.builder().userId(userId).label("Inbox").timeUUID(Uuids.timeBased()).color("Blue").build());
+        folderRepository.save(Folder.builder().userId(userId).label("Sent").timeUUID(Uuids.timeBased()).color("Green").build());
+        folderRepository.save(Folder.builder().userId(userId).label("Important").timeUUID(Uuids.timeBased()).color("Red").build());
+        folderRepository.save(Folder.builder().userId(userId).label("Starred").timeUUID(Uuids.timeBased()).color("Yellow").build());
     }
 
     public List<Folder> findAllByUserId(String userId) {
