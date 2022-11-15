@@ -27,3 +27,78 @@ And is also kept in sent items of sender user:
 Email view:
 <img width="1782" alt="image" src="https://user-images.githubusercontent.com/58611230/202033017-9e57b72b-5258-4c2f-a9bf-8b2e8fd6e14e.png">
 
+## Cassandra console so far:
+Lets first see what all tables are created. If we `describe main` cluster, we can see all the table schema.
+```
+token@cqlsh> use main;
+token@cqlsh:main> describe main;
+
+CREATE KEYSPACE main WITH replication = {'class': 'NetworkTopologyStrategy', 'asia-south1': '3'}  AND durable_writes = true;
+
+CREATE TABLE main.folders_by_user (
+    user_id text,
+    created_at_uuid uuid,
+    label text,
+    color text,
+    PRIMARY KEY (user_id, created_at_uuid, label)
+) WITH CLUSTERING ORDER BY (created_at_uuid ASC, label ASC)
+    AND additional_write_policy = '99PERCENTILE'
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.UnifiedCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99PERCENTILE';
+
+CREATE TABLE main.messages_by_id (
+    id uuid PRIMARY KEY,
+    body text,
+    "from" text,
+    subject text,
+    "to" list<text>
+) WITH additional_write_policy = '99PERCENTILE'
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.UnifiedCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99PERCENTILE';
+
+CREATE TABLE main.messages_by_user_folder (
+    user_id text,
+    label text,
+    created_at_uuid uuid,
+    "from" text,
+    subject text,
+    unread boolean,
+    PRIMARY KEY ((user_id, label), created_at_uuid)
+) WITH CLUSTERING ORDER BY (created_at_uuid DESC)
+    AND additional_write_policy = '99PERCENTILE'
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.UnifiedCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99PERCENTILE';
+```
