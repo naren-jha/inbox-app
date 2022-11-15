@@ -102,3 +102,13 @@ CREATE TABLE main.messages_by_user_folder (
     AND read_repair = 'BLOCKING'
     AND speculative_retry = '99PERCENTILE';
 ```
+
+## Lets see data in different tables:
+### folders_by_user
+<img width="1093" alt="image" src="https://user-images.githubusercontent.com/58611230/202035827-68643202-a717-48ab-b6cc-fd8bdab5d894.png">
+
+### messages_by_id
+<img width="1722" alt="image" src="https://user-images.githubusercontent.com/58611230/202036042-ba4d3417-60e2-4950-9443-31d266ad8e4a.png">
+
+### messages_by_user_folder
+<img width="1122" alt="image" src="https://user-images.githubusercontent.com/58611230/202036155-743f6b84-c30b-467f-8950-e30713e3fc15.png">
