@@ -5,10 +5,14 @@
 [Design doc](https://drive.google.com/file/d/1RneJhMHor6yS3b2wnxkg-5wLwpyPf39t/view?usp=sharing)
 
 
-On User SignUp:
-<img width="1347" alt="image" src="https://user-images.githubusercontent.com/58611230/201765808-dbfe6b57-278f-4afd-833e-ece5a28f4a2c.png">
+After User SignUp:
+<img width="1788" alt="image" src="https://user-images.githubusercontent.com/58611230/202012282-75d79f4d-5199-4678-919e-124458fcb4fc.png">
+
+Empty folder (no sent items):
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/58611230/202012450-ee8c3532-a59f-4982-9d33-d987fa83a0f9.png">
+
 
 Email View:
-<img width="1391" alt="image" src="https://user-images.githubusercontent.com/58611230/201765981-7844d55b-b328-4506-bf31-2af9748b06b9.png">
+<img width="1784" alt="image" src="https://user-images.githubusercontent.com/58611230/202012658-59d26463-eb2f-4681-be25-bed482290316.png">
 
-<img width="1380" alt="image" src="https://user-images.githubusercontent.com/58611230/201765902-08d822d2-0d75-44c0-9596-0b594a3faba4.png">
+<img width="1787" alt="image" src="https://user-images.githubusercontent.com/58611230/202012577-4d573907-f865-45dc-841a-483c97214bc4.png">
