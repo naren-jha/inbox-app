@@ -121,3 +121,5 @@ New email received:
 
 <img width="1786" alt="image" src="https://user-images.githubusercontent.com/58611230/202037763-67caab2b-1815-4f27-96ec-4628697bd3a1.png">
 
+DB console after this new message:
+<img width="1743" alt="image" src="https://user-images.githubusercontent.com/58611230/202038081-ef7ffece-e9ce-49d9-bf98-0d38d9493273.png">
