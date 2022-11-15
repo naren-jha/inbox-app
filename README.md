@@ -112,3 +112,12 @@ CREATE TABLE main.messages_by_user_folder (
 
 ### messages_by_user_folder
 <img width="1122" alt="image" src="https://user-images.githubusercontent.com/58611230/202036155-743f6b84-c30b-467f-8950-e30713e3fc15.png">
+
+Sending email to multiple users at a time
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/58611230/202037549-d6952d31-e2a6-4ed7-92df-1a4b0dba5d7f.png">
+
+New email recived:
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/58611230/202037681-e97733f3-6240-47e5-a05e-27f953e2cf84.png">
+
+<img width="1786" alt="image" src="https://user-images.githubusercontent.com/58611230/202037763-67caab2b-1815-4f27-96ec-4628697bd3a1.png">
+
