@@ -13,5 +13,4 @@ Empty folder (no sent items yet):
 
 
 Email View:
-
 <img width="1787" alt="image" src="https://user-images.githubusercontent.com/58611230/202012577-4d573907-f865-45dc-841a-483c97214bc4.png">
