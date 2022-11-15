@@ -14,3 +14,16 @@ Empty folder (no sent items yet):
 
 Email View:
 <img width="1787" alt="image" src="https://user-images.githubusercontent.com/58611230/202012577-4d573907-f865-45dc-841a-483c97214bc4.png">
+
+Composing a new email:
+<img width="1790" alt="image" src="https://user-images.githubusercontent.com/58611230/202032480-64263e6b-1ca5-4ca3-ba18-1432fb254a75.png">
+
+A new email lands in all receiving user's inbox:
+<img width="1790" alt="image" src="https://user-images.githubusercontent.com/58611230/202032609-5129a94b-6e25-4d69-9b2c-6a09b307fe85.png">
+
+And is also kept in sent items of sender user:
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/58611230/202032833-ca2ab271-6774-4d48-b248-1335993ccc92.png">
+
+Email view:
+<img width="1782" alt="image" src="https://user-images.githubusercontent.com/58611230/202033017-9e57b72b-5258-4c2f-a9bf-8b2e8fd6e14e.png">
+
