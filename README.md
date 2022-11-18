@@ -1,12 +1,14 @@
 # inbox-app
 
 ## Cassandra Docs
-https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
+* https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
 
 
-[Design doc](https://drive.google.com/file/d/1RneJhMHor6yS3b2wnxkg-5wLwpyPf39t/view?usp=sharing)
+## App Design Doc:
+* https://drive.google.com/file/d/1RneJhMHor6yS3b2wnxkg-5wLwpyPf39t/view?usp=sharing
 
 
+## End result
 After User SignUp:
 <img width="1788" alt="image" src="https://user-images.githubusercontent.com/58611230/202012282-75d79f4d-5199-4678-919e-124458fcb4fc.png">
 
