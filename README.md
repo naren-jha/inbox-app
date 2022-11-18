@@ -1,12 +1,17 @@
 # inbox-app
 
 ## Cassandra Docs
+* https://cassandra.apache.org/doc/latest/
 * https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
+* https://cassandra.apache.org/doc/latest/cassandra/data_modeling/index.html
 * https://www.datastax.com/blog/coming-12-collections-support-cql3
 * https://www.datastax.com/blog/cql-improvements-cassandra-21
 * https://www.datastax.com/examples
 * https://www.datastax.com/examples/astra-netflix
 * https://www.datastax.com/examples/astra-tik-tok
+* https://youtu.be/fcohNYJ1FAI
+* https://youtu.be/u6pKIrfJgkU
+* https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
 
 
 ## App Design Doc:
