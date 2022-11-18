@@ -2,6 +2,11 @@
 
 ## Cassandra Docs
 * https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
+* https://www.datastax.com/blog/coming-12-collections-support-cql3
+* https://www.datastax.com/blog/cql-improvements-cassandra-21
+* https://www.datastax.com/examples
+* https://www.datastax.com/examples/astra-netflix
+* https://www.datastax.com/examples/astra-tik-tok
 
 
 ## App Design Doc:
