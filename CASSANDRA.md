@@ -5,6 +5,12 @@
 * These are the two high-level goals for data modeling in Cassandra:
   1. Spread data evenly around the cluster
   2. Minimize the number of partitions you read from
+* About writes in cassandra
+  - Writes in Cassandra aren't free, but they're awfully cheap. 
+  - Cassandra is optimized for high write throughput, and almost all writes are equally efficient. 
+  - **If you can perform extra writes to improve the efficiency of your read queries, it's almost always a good tradeoff. Reads tend to be more expensive and are much more difficult to tune.**
+
+
 
 ## Docs and videos
 * https://cassandra.apache.org/doc/latest/
