@@ -2,8 +2,8 @@
 
 ## Cassandra Docs
 * https://cassandra.apache.org/doc/latest/
-* https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
 * https://cassandra.apache.org/doc/latest/cassandra/data_modeling/index.html
+* https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
 * https://www.datastax.com/blog/coming-12-collections-support-cql3
 * https://www.datastax.com/blog/cql-improvements-cassandra-21
 * https://www.datastax.com/examples
