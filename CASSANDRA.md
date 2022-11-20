@@ -2,6 +2,9 @@
 
 ## Some points
 * **Column Family** – Column Families in Cassandra are like tables in Relational Databases. Each Column Family contains a collection of rows which are represented by a Map<RowKey, SortedMap<ColumnKey, ColumnValue>>. The key gives the ability to access related data together
+* These are the two high-level goals for your data model:
+  - Spread data evenly around the cluster
+  - Minimize the number of partitions read
 
 ## Docs and videos
 * https://cassandra.apache.org/doc/latest/
