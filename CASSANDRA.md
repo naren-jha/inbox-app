@@ -15,7 +15,9 @@
   - Denormalization and duplication of data is a fact of life with Cassandra. Don't be afraid of it. 
   - Disk space is generally the cheapest resource (compared to CPU, memory, disk IOPs, or network), and Cassandra is architected around that fact. 
   - In order to get the most efficient reads, you often need to duplicate data. Besides, Cassandra doesn't have JOINs, and you don't really want to use those in a distributed fashion.
-
+* Due to the way that Cassandra stores data, some query patterns are not at all efficient, including the following:
+  - **Fetching data from multiple partitions** – this will require a coordinator to fetch the data from multiple nodes, store it temporarily in heap, and then aggregate the data before returning results to the user
+  - **Join-based queries** – due to its distributed nature, Cassandra does not support table joins in queries the same way a relational database does, and as a result, queries with joins will be slower and can also lead to inconsistency and availability issues
 
 
 ## Docs and videos
