@@ -119,7 +119,7 @@ CREATE TABLE main.messages_by_user_folder (
     AND speculative_retry = '99PERCENTILE';
 ```
 
-## Lets see data in different tables:
+## data in tables and end result:
 ### folders_by_user
 <img width="1093" alt="image" src="https://user-images.githubusercontent.com/58611230/202035827-68643202-a717-48ab-b6cc-fd8bdab5d894.png">
 
