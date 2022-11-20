@@ -4,7 +4,7 @@
 * https://cassandra.apache.org/doc/latest/
 * https://cassandra.apache.org/doc/latest/cassandra/data_modeling/index.html
 * https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
-* https://www.datastax.com/blog/coming-12-collections-support-cql3
+* You can also use List, Set, Map in cassandra columns: https://www.datastax.com/blog/coming-12-collections-support-cql3
 * https://www.datastax.com/blog/cql-improvements-cassandra-21
 * https://www.datastax.com/blog/whats-new-cassandra-21-better-implementation-counters
 * https://www.datastax.com/blog/lightweight-transactions-cassandra-20
