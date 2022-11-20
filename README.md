@@ -12,8 +12,6 @@
 * https://youtu.be/fcohNYJ1FAI
 * https://youtu.be/u6pKIrfJgkU
 * https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
-* https://www.baeldung.com/cassandra-with-java
-* https://www.baeldung.com/cassandra-data-modeling
 
 
 ## App Design Doc:
