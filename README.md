@@ -145,9 +145,14 @@ New email received:
 DB console after this new message:
 <img width="1743" alt="image" src="https://user-images.githubusercontent.com/58611230/202038081-ef7ffece-e9ce-49d9-bf98-0d38d9493273.png">
 
-### maintaining unread email counter per folder:
+### Folder wise unread counter
+maintaining unread email counter per folder
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203162325-a4479db7-e1a7-40fa-8d69-f53c44b6e331.png">
 
-### marking message read/unread
+marking message read/unread:
 <img width="1789" alt="image" src="https://user-images.githubusercontent.com/58611230/203162451-a80b3a8c-db15-44c6-a4c6-f33ef4663857.png">
+
+table data:
+<img width="1349" alt="image" src="https://user-images.githubusercontent.com/58611230/203162870-066eb03b-1134-4cb5-be71-8f80d668a20f.png">
+
 
