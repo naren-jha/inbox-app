@@ -147,7 +147,7 @@ DB console after this new message:
 
 ### Folder wise unread counter
 maintaining unread email counter per folder
-<img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203162325-a4479db7-e1a7-40fa-8d69-f53c44b6e331.png">
+<img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203164105-01ed1960-aa47-443f-91f0-c61f292cc035.png">
 
 marking message read/unread:
 <img width="1789" alt="image" src="https://user-images.githubusercontent.com/58611230/203162451-a80b3a8c-db15-44c6-a4c6-f33ef4663857.png">
