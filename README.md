@@ -14,6 +14,7 @@
 * https://youtu.be/fcohNYJ1FAI
 * https://youtu.be/u6pKIrfJgkU
 * https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
+* https://www.youtube.com/playlist?list=PLqq-6Pq4lTTYzKjjA1C_jbic95tmq9FQt
 
 
 ## App Design Doc:
