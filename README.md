@@ -2,18 +2,18 @@
 
 ## Cassandra Docs
 * https://cassandra.apache.org/doc/latest/
-* https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
 * https://cassandra.apache.org/doc/latest/cassandra/data_modeling/index.html
-* https://www.datastax.com/blog/coming-12-collections-support-cql3
+* https://www.datastax.com/blog/basic-rules-cassandra-data-modeling
+* You can also use List, Set, Map as columns in Cassandra: https://www.datastax.com/blog/coming-12-collections-support-cql3
 * https://www.datastax.com/blog/cql-improvements-cassandra-21
+* https://www.datastax.com/blog/whats-new-cassandra-21-better-implementation-counters
+* https://www.datastax.com/blog/lightweight-transactions-cassandra-20
 * https://www.datastax.com/examples
 * https://www.datastax.com/examples/astra-netflix
 * https://www.datastax.com/examples/astra-tik-tok
 * https://youtu.be/fcohNYJ1FAI
 * https://youtu.be/u6pKIrfJgkU
 * https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
-* https://www.baeldung.com/cassandra-with-java
-* https://www.baeldung.com/cassandra-data-modeling
 
 
 ## App Design Doc:
@@ -43,8 +43,13 @@ And is also kept in sent items of sender user:
 Email view:
 <img width="1782" alt="image" src="https://user-images.githubusercontent.com/58611230/202033017-9e57b72b-5258-4c2f-a9bf-8b2e8fd6e14e.png">
 
-## Cassandra console so far:
-Lets first see what all tables are created. If we `describe main` cluster, we can see all the table schema.
+## Cassandra data model so far:
+* These are the two high-level goals for data modeling in Cassandra:
+  1. Spread data evenly around the cluster
+  2. Minimize the number of partitions you read from
+  
+Lets see what all tables are created. If we `describe main` cluster, we can see all the table schema.
+
 ```
 token@cqlsh> use main;
 token@cqlsh:main> describe main;
