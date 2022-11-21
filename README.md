@@ -150,9 +150,9 @@ maintaining unread email counter per folder
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203164105-01ed1960-aa47-443f-91f0-c61f292cc035.png">
 
 marking message read/unread:
-<img width="1789" alt="image" src="https://user-images.githubusercontent.com/58611230/203162451-a80b3a8c-db15-44c6-a4c6-f33ef4663857.png">
+<img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203164417-44b5a4ba-3d42-4c16-85b0-740dfdb75c22.png">
 
 table data:
-<img width="1349" alt="image" src="https://user-images.githubusercontent.com/58611230/203162870-066eb03b-1134-4cb5-be71-8f80d668a20f.png">
+<img width="1352" alt="image" src="https://user-images.githubusercontent.com/58611230/203164496-d1d101bf-bd1a-49f7-80d9-49d1ef7f3c0d.png">
 
 
