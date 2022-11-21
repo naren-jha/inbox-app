@@ -4,6 +4,7 @@ import com.njha.inboxapp.email.EmailService;
 import com.njha.inboxapp.emaillist.EmailListItemService;
 import com.njha.inboxapp.folder.Folder;
 import com.njha.inboxapp.folder.FolderService;
+import com.njha.inboxapp.folder.UnreadEmailStatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

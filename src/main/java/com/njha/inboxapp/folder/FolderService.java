@@ -6,12 +6,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class FolderService {
 
     @Autowired
     private FolderRepository folderRepository;
+
+    @Autowired
+    private UnreadEmailStatsRepository unreadEmailStatsRepository;
 
     public void createStandardFoldersForNewUser(String userId) {
         folderRepository.save(Folder.builder().userId(userId).label("Inbox").timeUUID(Uuids.timeBased()).color("Blue").build());
@@ -38,5 +43,12 @@ public class FolderService {
         }
 
         return userFolders;
+    }
+
+    public Map<String, Integer> getUnreadEmailStats(String userId) {
+        List<UnreadEmailStats> unreadEmailStats = unreadEmailStatsRepository.findAllByUserId(userId);
+        Map<String, Integer> folderUnreadCountMap = unreadEmailStats.stream()
+                .collect(Collectors.toMap(UnreadEmailStats::getLabel, UnreadEmailStats::getUnreadCount));
+        return folderUnreadCountMap;
     }
 }

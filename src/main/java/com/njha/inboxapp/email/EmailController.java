@@ -1,5 +1,9 @@
 package com.njha.inboxapp.email;
 
+import com.njha.inboxapp.emaillist.EmailListItem;
+import com.njha.inboxapp.emaillist.EmailListItemKey;
+import com.njha.inboxapp.emaillist.EmailListItemRepository;
+import com.njha.inboxapp.emaillist.EmailListItemService;
 import com.njha.inboxapp.folder.Folder;
 import com.njha.inboxapp.folder.FolderService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,10 +17,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 @Slf4j
@@ -29,7 +30,11 @@ public class EmailController {
     private EmailService emailService;
 
     @GetMapping("/emails/{id}")
-    public String viewEmail(@PathVariable UUID id, Model model, @AuthenticationPrincipal OAuth2User principal, @RequestParam(required = false) String folder) {
+    public String viewEmail(
+            @PathVariable UUID id,
+            Model model, @AuthenticationPrincipal OAuth2User principal,
+            @RequestParam String folder
+    ) {
         if (principal == null || principal.getAttribute("login") == null) {
             return "index";
         }
@@ -50,19 +55,20 @@ public class EmailController {
             folder = "Inbox";
         }
         model.addAttribute("folderName", folder);
+        emailService.markEmailUnread(id, folder, userId);
 
-
-
-        model.addAttribute("folderToUnreadCounts", 1);
-
-
+        Map<String, Integer> folderUnreadCountMap = folderService.getUnreadEmailStats(userId);
+        model.addAttribute("folderToUnreadCounts", folderUnreadCountMap);
 
         return "email-page";
     }
 
-
     @GetMapping("/compose")
-    public String getComposeEmailPage(Model model, @AuthenticationPrincipal OAuth2User principal, @RequestParam(required = false) String toIds) {
+    public String getComposeEmailPage(
+            Model model,
+            @AuthenticationPrincipal OAuth2User principal,
+            @RequestParam(required = false) String toIds
+    ) {
         if (principal == null || principal.getAttribute("login") == null) {
             return "index";
         }
@@ -77,8 +83,8 @@ public class EmailController {
         List<String> uniqueToIds = splitToIds(toIds);
         model.addAttribute("toIds", String.join(", ", uniqueToIds));
 
-
-        model.addAttribute("folderToUnreadCounts", 1);
+        Map<String, Integer> folderUnreadCountMap = folderService.getUnreadEmailStats(userId);
+        model.addAttribute("folderToUnreadCounts", folderUnreadCountMap);
 
         return "compose-page";
     }
@@ -98,7 +104,10 @@ public class EmailController {
     }
 
     @PostMapping(value = "/sendEmail")
-    public ModelAndView sendEmail(@RequestBody MultiValueMap<String, String> formData, @AuthenticationPrincipal OAuth2User principal) {
+    public ModelAndView sendEmail(
+            @RequestBody MultiValueMap<String, String> formData,
+            @AuthenticationPrincipal OAuth2User principal
+    ) {
         if (principal == null || principal.getAttribute("login") == null) {
             return new ModelAndView("redirect:/");
         }
@@ -109,19 +118,9 @@ public class EmailController {
         String from = principal.getAttribute("login");
 
         List<String> uniqueToIds = splitToIds(toUserIds);
-//        uniqueToIds.forEach(toId -> {
-//            emailService.sendEmail(toId, from, "Inbox", subject, body);
-//        });
-//        // sender will have same message in the sent item
-//        emailService.sendEmail(from, from, "Sent", subject, body);
         emailService.sendEmail(uniqueToIds, from, subject, body);
-
-
-
 
         return new ModelAndView("redirect:/");
     }
-
-
 
 }
