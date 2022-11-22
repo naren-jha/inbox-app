@@ -152,7 +152,7 @@ DB console after this new message:
 - i.e., columns in a counter table can be either primarykey (partitioning key or clustering key) column, or counter column itself
 - that means, you cannot have non-priparykey, non-counter column in a counter table.
 - you can run increment/decrement queries on counter columns of a counter table, like - 
-`update COUNTER_TABLE_NAME set COUNTER_COL_NAME = COUNTER_COL_NAME + 1 where SOME_OTHER_COL = SOME_VAL` note that here the record does not have to exist in advance with matching 'where clause', if the record with the given where clause does not exist, cassandra will create a new entry and consider the initial value as 0. So in this case if there is no entry for `SOME_OTHER_COL = SOME_VAL` when the query is execute, then cassandra will create a new entry and the value for COUNTER_COL_NAME for that entry will be updated from 0 to 1.
+`update COUNTER_TABLE_NAME set COUNTER_COL_NAME = COUNTER_COL_NAME + 1 where SOME_OTHER_COL = SOME_VAL` note that here the record does not have to exist in advance with matching 'where clause', if the record with the given where clause does not exist, cassandra will create a new entry with initial value for all counter columns as 0. So in this case if there is no entry for `SOME_OTHER_COL = SOME_VAL` when the query is executed, then cassandra will create a new entry and the value for `COUNTER_COL_NAME` for that entry will be updated from 0 to 1.
 
 maintaining unread email counter per folder
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203164105-01ed1960-aa47-443f-91f0-c61f292cc035.png">
