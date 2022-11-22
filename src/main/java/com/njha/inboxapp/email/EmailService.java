@@ -95,7 +95,7 @@ public class EmailService {
                 .unread(false) // user who wrote the message has already read it, so messages in sent items will be marked read by default
                 .build();
         emailListItemRepository.save(accountCreatedNotifEmailItemList);
-        unreadEmailStatsRepository.incrementUnreadCount(fromId, "Sent");
+        // unreadEmailStatsRepository.incrementUnreadCount(fromId, "Sent"); // we don't need unread count for sent folder
     }
 
     public void markEmailUnread(UUID id, String folder, String userId) {

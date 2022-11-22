@@ -10,7 +10,5 @@ public interface EmailListItemRepository extends CassandraRepository<EmailListIt
 
     // List<EmailListItem> findAllById(EmailListItemKey id);
 
-    EmailListItem findByKey(EmailListItemKey key);
-
     List<EmailListItem> findAllByKey_UserIdAndKey_Label(String userId, String label);
 }

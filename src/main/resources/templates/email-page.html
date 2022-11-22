@@ -60,7 +60,11 @@
 <body>
 <div class="container">
     <header>
-        <h1>Welcome, <span th:text="${userName}">User</span></h1>
+        <h3>
+            Inbox App
+            <small class="text-muted">Welcome, </small>
+            <small class="text-muted" th:text="${userName}">UserName</small>
+        </h3>
     </header>
 
     <nav>

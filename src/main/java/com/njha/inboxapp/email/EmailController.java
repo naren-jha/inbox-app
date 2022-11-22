@@ -1,9 +1,5 @@
 package com.njha.inboxapp.email;
 
-import com.njha.inboxapp.emaillist.EmailListItem;
-import com.njha.inboxapp.emaillist.EmailListItemKey;
-import com.njha.inboxapp.emaillist.EmailListItemRepository;
-import com.njha.inboxapp.emaillist.EmailListItemService;
 import com.njha.inboxapp.folder.Folder;
 import com.njha.inboxapp.folder.FolderService;
 import lombok.extern.slf4j.Slf4j;
