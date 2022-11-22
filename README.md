@@ -15,6 +15,7 @@
 * https://youtu.be/u6pKIrfJgkU
 * https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
 * https://www.youtube.com/playlist?list=PLqq-6Pq4lTTYzKjjA1C_jbic95tmq9FQt
+* https://docs.datastax.com/en/archived/cql/3.1/cql/cql_using/use_counter_t.html
 
 
 ## App Design Doc:
@@ -147,6 +148,12 @@ DB console after this new message:
 <img width="1743" alt="image" src="https://user-images.githubusercontent.com/58611230/202038081-ef7ffece-e9ce-49d9-bf98-0d38d9493273.png">
 
 ### Folder wise unread counter
+- counter tables in Cassandra has to be dedicated table
+- columns in a counter table can be either primarykey (partitioning key or clustering key) column, or counter column
+- that means, you cannot have non-priparykey, non-counter column in a counter table.
+- you can run increment/decrement queries on counter columns of a counter table, like - 
+`update COUNTER_TABLE_NAME set COUNTER_COL_NAME = COUNTER_COL_NAME + 1 where SOME_OTHER_COL = SOME_VAL`
+
 maintaining unread email counter per folder
 <img width="1791" alt="image" src="https://user-images.githubusercontent.com/58611230/203164105-01ed1960-aa47-443f-91f0-c61f292cc035.png">
 
