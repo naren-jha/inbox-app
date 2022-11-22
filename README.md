@@ -148,7 +148,7 @@ DB console after this new message:
 <img width="1743" alt="image" src="https://user-images.githubusercontent.com/58611230/202038081-ef7ffece-e9ce-49d9-bf98-0d38d9493273.png">
 
 ### Folder wise unread counter
-- counter tables in Cassandra has to be dedicated table
+- counter tables in Cassandra has to be a dedicated table.
 - i.e., columns in a counter table can be either primarykey (partitioning key or clustering key) column, or counter column itself
 - that means, you cannot have non-priparykey, non-counter column in a counter table.
 - you can run increment/decrement queries on counter columns of a counter table, like - 
