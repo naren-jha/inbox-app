@@ -16,6 +16,7 @@
 * https://academy.datastax.com/#/courses/c5b626ca-d619-45b3-adf2-a7d2b940a7ee
 * https://www.youtube.com/playlist?list=PLqq-6Pq4lTTYzKjjA1C_jbic95tmq9FQt
 * https://docs.datastax.com/en/archived/cql/3.1/cql/cql_using/use_counter_t.html
+* https://www.datastax.com/blog/putting-some-structure-storage-engine
 
 
 ## App Design Doc:
